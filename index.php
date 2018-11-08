@@ -33,7 +33,7 @@ if(getenv('textAnalyticsKey') !== false)
 
 if(getenv('textAnalyticsName') !== false)
     {
-        $aiName=getenv('textAnalyticsName');
+        $textAnalyticsName=getenv('textAnalyticsName');
         //DEBUG
         //echo "Found aiName at: $textAnalyticsName<hr>";
      }else{
@@ -65,7 +65,15 @@ $jsondata='{
     }
   ]
 }';
- 
+
+
+echo "<b>Endpoint: </b>${textAnalyticsEndpoint}/languages<br>";
+echo "<b>AppName: </b>$textAnalyticsName<br>";
+
+
+echo preg_replace('/\n/', '<br>', $jsondata);
+
+echo "<hr><br><br><b>Result:<br>"; 
 //API Url
 $url = "${textAnalyticsEndpoint}/languages";
  
@@ -82,8 +90,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $jsondata);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array("Ocp-Apim-Subscription-Key: $textAnalyticsKey", "Content-Type: application/json")); 
  
 //Execute the request
-$result = curl_exec($ch);
-
-
+echo "<br><br>";
+curl_exec($ch);
 
 echo "</body>";
