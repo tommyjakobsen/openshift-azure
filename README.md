@@ -12,6 +12,8 @@ Details: https://github.com/Azure/open-service-broker-azure
 
 ## Running the tests
 
+Access http://<your url>/index.php
+
 ## Built With
 
 * VI
