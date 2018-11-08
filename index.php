@@ -8,36 +8,36 @@ echo "<html>
 <body>";
 
 
-if(getenv('aiEndPoint') !== false)
+if(getenv('textAnalyticsEndpoint') !== false)
     {
-        $aiEndPoint=getenv('aiEndPoint');
+        $textAnalyticsEndpoint=getenv('textAnalyticsEndpoint');
        //Debug
-        //echo "Found AI endpoint at: $aiEndPoint<hr>";
+        //echo "Found AI endpoint at: $textAnalyticsEndpoint<hr>";
      }else{
-        echo "<font color=red><b>! \$aiEndPoint variable not set...<br>Check bindings in openshift...</font>";
+        echo "<font color=red><b>! \$textAnalyticsEndpoint variable not set...<br>Add secrets to application...</font>";
         echo "</body>";
      exit(1);
      }
 
-if(getenv('aiKey') !== false)
+if(getenv('textAnalyticsKey') !== false)
     {
-        $aiKey=getenv('aiKey');
+        $textAnalyticsKey=getenv('textAnalyticsKey');
         //DEBUG
-        //echo "Found aiKey at: $aiKey<hr>";
+        //echo "Found aiKey at: $textAnalyticsKey<hr>";
      }else{
-        echo "<font color=red><b>! \$aiKey variable not set...<br>Check bindings in openshift...</font>";
+        echo "<font color=red><b>! \$textAnalyticsKey variable not set...<br>Check bindings in openshift...</font>";
         echo "</body>";
      exit(1);
      }
 
 
-if(getenv('aiName') !== false)
+if(getenv('textAnalyticsName') !== false)
     {
-        $aiName=getenv('aiName');
+        $aiName=getenv('textAnalyticsName');
         //DEBUG
-        //echo "Found aiName at: $aiName<hr>";
+        //echo "Found aiName at: $textAnalyticsName<hr>";
      }else{
-        echo "<font color=red><b>! \$aiName variable not set...<br>Check bindings in openshift...</font>";
+        echo "<font color=red><b>! \$textAnalyticsName variable not set...<br>Check bindings in openshift...</font>";
         echo "</body>";
      exit(1);
      }
@@ -67,7 +67,7 @@ $jsondata='{
 }';
  
 //API Url
-$url = "$aiEndPoint";
+$url = "${textAnalyticsEndpoint}/languages";
  
 //Initiate cURL.
 $ch = curl_init($url);
