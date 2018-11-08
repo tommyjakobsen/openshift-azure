@@ -45,7 +45,26 @@ if(getenv('aiName') !== false)
 
 
 
-<?php
+$jsondata='{
+  "documents": [
+    {
+      "id": "1",
+      "text": "Hello world"
+    },
+    {
+      "id": "2",
+      "text": "Bonjour tout le monde"
+    },
+    {
+      "id": "3",
+      "text": "La carretera estaba atascada. Había mucho tráfico el día de ayer."
+    },
+    {
+      "id": "4",
+      "text": ":) :( :D"
+    }
+  ]
+}';
  
 //API Url
 $url = "$aiEndPoint";
@@ -57,7 +76,7 @@ $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_POST, 1);
  
 //Attach our encoded JSON string to the POST fields.
-curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $jsondata);
  
 //Set the content type to application/json
 curl_setopt($ch, CURLOPT_HTTPHEADER, array("Ocp-Apim-Subscription-Key: $aiKey", "Content-Type: application/json")); 
