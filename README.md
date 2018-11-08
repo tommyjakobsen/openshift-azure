@@ -1,11 +1,5 @@
 # openshift-azure
 
-For deploying this application you need to setup Azure Open Service Broker
-https://github.com/Azure/open-service-broker-azure
-
-
-# openshift-azure
-
 This is a project that will use secrets from Azure Analytics bindings made against Azure Cloud
 
 
