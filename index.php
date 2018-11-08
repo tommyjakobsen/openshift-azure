@@ -79,7 +79,7 @@ curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $jsondata);
  
 //Set the content type to application/json
-curl_setopt($ch, CURLOPT_HTTPHEADER, array("Ocp-Apim-Subscription-Key: $aiKey", "Content-Type: application/json")); 
+curl_setopt($ch, CURLOPT_HTTPHEADER, array("Ocp-Apim-Subscription-Key: $textAnalyticsKey", "Content-Type: application/json")); 
  
 //Execute the request
 $result = curl_exec($ch);
