@@ -116,7 +116,7 @@ $sentiments=json_decode(http_request($url, $textAnalyticsKey, $jsondata));
 $postdata=json_decode($jsondata);
 $result=json_decode($output);
 
-echo "<h1>Azure Analytics - Language</h1>";
+echo "<h1>Azure Text-Analytics - Language/Sentiment</h1>";
 foreach($postdata->documents as $key=>$val)
 	{
 
