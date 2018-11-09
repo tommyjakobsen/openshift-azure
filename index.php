@@ -72,7 +72,7 @@ $jsondata='{
     },
     {
       "id": "2",
-      "text": "Hi, my network is down. Do you know when this will be up and working again? It is no stress, since I\'m not in hurry. I hope you fix it within 5 days, I will be happy."
+      "text": "Hi, my network is down. Do you know when this will be up and working again? It is no stress, since I\'m not in hurry. I hope you can fix it within 5 days, then I will be very happy."
     },
     {
       "id": "3",
@@ -80,7 +80,7 @@ $jsondata='{
     },
     {
       "id": "4",
-      "text": "Hei, Jeg ser at jeg har 60Gbit linje og det går meget raskt. Er det mulig å oppgradere til 70Gbi Det hadde vært kultom jeg hadde fått det før neste uke, da jeg skal spille et fett spill!"
+      "text": "Hei, Jeg ser at jeg har 60Gbit linje og det går meget raskt. Er det mulig å oppgradere til 70Gbi Det hadde vært kult om jeg hadde fått det før neste uke, da jeg skal spille et fett spill!"
     }
   ]
 }';
