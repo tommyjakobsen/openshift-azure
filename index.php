@@ -9,7 +9,7 @@ echo "<!DOCTYPE html>
 <style>
 #rcorners1 {
     border-radius: 25px;
-    background: #73AD21;
+    background: #bcd698;
     padding: 20px; 
     width: 600px;
     height: 150px;    
@@ -68,11 +68,11 @@ $jsondata='{
   "documents": [
     {
       "id": "1",
-      "text": "Hello world"
+      "text": "Hi, I just called to say my network is down yet again! This is not good enough. I\'m paying a lot to get the connection working each month..."
     },
     {
       "id": "2",
-      "text": "Bonjour tout le monde"
+      "text": "Hi, my network is down. Do you know when this will be up and working again? It is no stress, since I\'m not in hurry. I hope you fix it within 5 days, I will be happy."
     },
     {
       "id": "3",
@@ -80,7 +80,7 @@ $jsondata='{
     },
     {
       "id": "4",
-      "text": ":) :( :D"
+      "text": "Hei, Jeg ser at jeg har 60Gbit linje og det går meget raskt. Er det mulig å oppgradere til 70Gbi Det hadde vært kultom jeg hadde fått det før neste uke, da jeg skal spille et fett spill!"
     }
   ]
 }';
@@ -114,6 +114,7 @@ $output=http_request($url, $textAnalyticsKey, $jsondata);
 $url = "${textAnalyticsEndpoint}/sentiment";
 $sentiments=json_decode(http_request($url, $textAnalyticsKey, $jsondata));
 
+
 $postdata=json_decode($jsondata);
 $result=json_decode($output);
 
@@ -123,13 +124,15 @@ foreach($postdata->documents as $key=>$val)
 
 	echo "<p id='rcorners1'>".$val->text."<br>";
 	$id=$val->id;
-	echo "<br><br><br><b>Language: </b>".$result->documents[$key]->detectedLanguages[0]->name."<br>";
+	$sentscore=round((100*$sentiments->documents[$key]->score),0);
+	echo "<br><br><b>Language: </b>".$result->documents[$key]->detectedLanguages[0]->name."<br>";
 	echo "<b>ISO:</b> ".$result->documents[$key]->detectedLanguages[0]->iso6391Name."<br>";
 	$score=$result->documents[$key]->detectedLanguages[0]->score;
-	echo "<b>Certainty: </b>".($score*100)."%</p>";
+	echo "<b>Certainty: </b>".($score*100)."%";
+	echo " &nbsp;&nbsp;&nbsp;&nbsp; <b>negative <progress id='p' max='100' value='$sentscore'><span>0</span></progress> positive</b><br>";
+	echo "</p>";
 
 	}
 
 
-
-echo "</body></html>";
+echo "</body>";
