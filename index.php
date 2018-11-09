@@ -86,8 +86,6 @@ $jsondata='{
 }';
 
 
-echo "<b>Endpoint: </b>${textAnalyticsEndpoint}/languages<br>";
-echo "<b>AppName: </b>$textAnalyticsName<br>";
 function http_request($url, $textAnalyticsKey,  $jsondata){	
 	//Initiate cURL.
 	$ch = curl_init($url);
@@ -134,5 +132,8 @@ foreach($postdata->documents as $key=>$val)
 
 	}
 
+echo "<b>Endpoint Language: </b>${textAnalyticsEndpoint}/languages<br>";
+echo "<b>Endpoint Sentiment: </b>${textAnalyticsEndpoint}/sentiment<br>";
+echo "<b>AppName: </b>$textAnalyticsName<br>";
 
 echo "</body>";
