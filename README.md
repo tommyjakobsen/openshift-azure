@@ -14,6 +14,8 @@ Details: https://github.com/Azure/open-service-broker-azure
 
 Access http://\<your url\>/index.php
 
+![Demo App](https://raw.githubusercontent.com/tommyjakobsen/openshift-azure/master/analytics.png)
+
 ## Built With
 
 * VI
