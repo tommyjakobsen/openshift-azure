@@ -101,7 +101,6 @@ function http_request($url, $textAnalyticsKey,  $jsondata){
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array("Ocp-Apim-Subscription-Key: $textAnalyticsKey", "Content-Type: application/json")); 
  	
 	//Execute the request
-	echo "<br><br>";
 	$output=curl_exec($ch);
 	curl_close($ch);
 	return  $output;
