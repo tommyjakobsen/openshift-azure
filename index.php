@@ -27,6 +27,9 @@ echo "<!DOCTYPE html>
 <body>";
 
 
+//ADDING EXPERIMENTAL
+echo "<a href='./experimental.php'>[ Experimental ]</a><br>";
+
 if(getenv('textAnalyticsEndpoint') !== false)
     {
         $textAnalyticsEndpoint=getenv('textAnalyticsEndpoint');
