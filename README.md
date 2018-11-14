@@ -6,7 +6,7 @@ This is a project that will use secrets from Azure Analytics bindings made again
 
 ### Prerequisites
 Virtualbox.
-Minishift from Red Hat Developer portal (CDK)
+Minishift from Red Hat Developer portal (CDK).
 You need to setup Azure Open Service Broker prior to deploying or to make this application work.
 Details: https://github.com/Azure/open-service-broker-azure
 
